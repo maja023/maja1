@@ -18,7 +18,7 @@ app.use(userRoutres);
 const studentRoutes=require("./Routes/studentRoutes");
 app.use(studentRoutes);
 app.set('view engine', 'ejs');
-app.use(express.static('views/html'))
+app.use(express.static('views'))
 
 
 
