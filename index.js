@@ -1,7 +1,8 @@
 require("dotenv");
 const bodyParser=require("body-parser");
  const address=require('address');
-
+const mongoose=require("mongoose")
+mongoose.set('strictQuery', true);
 
 const configF=require("./config/config");
 const express=require("express");
