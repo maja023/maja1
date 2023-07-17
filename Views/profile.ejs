@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        section {
+    width: 500px;
+    margin: auto;
+    border: 1px solid #4f4f54;
+    margin-top: 35px;
+    border-radius: 12px;
+    box-shadow: 4px 3px 4px #0b0a1f;
+    outline: none;
+}
+.cen{
+    text-align: center;
+}
+.stransDetails {
+    background: antiquewhite;
+    margin: 8px 0px;
+    padding: 6px;
+    font-weight: bold;
+    display: flex;
+    border-radius: 7px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lefttrade {
+    width: 47%;
+}
+
+.righttrade {
+    color: limegreen;
+}
+
+
+.tranMain {
+    width: 379px;
+    margin: auto;
+    padding-top: 15px;
+    background: #050a22;
+    border-radius: 9px;
+    outline: none;
+    /* border: 1px solid cadetblue; */
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 1px;
+}
+img {
+    border-radius: 73%;
+    height: 100px;
+    width: 100px;
+}
+.stranmain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 19px;
+    background: #03222f;
+    width: 99%;
+    color: #f4e8e8;
+    padding-bottom: 9px;
+    /* color: white; */
+    margin: auto;
+    box-shadow: 2px 4px 4px #aeaaaa;
+    padding: 14px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+small {
+    display: block;
+}
+body {
+    background: #091c2c;
+}
+
+.cen {
+    color: white;
+    font-family: sans-serif;
+}
+.rightTran {
+    color: #070606;
+}
+small.date {
+    font-size: 11px;
+    padding-top: 2px;
+    color: mediumvioletred;
+}
+    </style>
+
+ <div class="mainPro">
+    <div class="container">
+        <section>
+   <div class="cen">
+    <div class="tppic">
+        <img src="https://static.vecteezy.com/system/resources/previews/006/487/917/original/man-avatar-icon-free-vector.jpg" />
+    <h1> <b style="color:rebeccapurple"> <%=title.name%> </b> </h1>
+    <h4>Account Number : <b style="color: rgb(38, 78, 187);"> <%=title.phone%> </b></h4>
+    <h4>Account Balance : <b style="color: rgb(133, 196, 40);"> <%=title.amount%>  BDT</b></h4>
+    <h5><a class="btn btn-success" href="/sendmoney">Send Money</a></h5>
+    <h5><a class="btn btn-primary" href="/moneyreq">  Request Money</a></h5>
+    <h5><a class="btn btn-primary" href="/request">  Request </a></h5>
+    <h5><a class="btn btn-danger" href="/logout">Logout</a></h5>
+
+   </div>
+
+        </div>
+
+
+        <div class="tranMain">
+               
+
+<% if(send.length>0){%>
+    <%  for(let i=0;i<send.length;i++){%>
+
+     
+            <div class="stranmain">
+                <div class="leftTran">
+                    <b><%= send[i].transationStatus %></b>
+                    <% if(send[i].senderNumber==send[i].transationId && send[i].transationStatus=="send money" ){%>
+                        <small><%= send[i].reciverNumber %></small>
+                              
+                                <% }else{%>
+                      
+                                  <small><%= send[i].senderNumber %></small>
+                                  <%}%>
+                      
+                                <small class="date"> <%= send[i].transationDate %></small>
+
+       
+                </div>
+                <div class="rightTran">
+                    <% if(send[i].transationStatus=="send money" ){%>
+                    <b style="color: red;">- <%= send[i].transationAmount %></b>
+                    <% }else{%>
+                      
+                        <b style="color: rgb(23, 209, 38);">+ <%= send[i].transationAmount %></b>
+                        <%}%>
+                    
+                </div>
+            </div>
+            
+
+            <% }%>
+    
+        <% }else{%>
+        <p style="color: red;text-align: center;padding:10px 0px">data not Found !</p>
+        <% } %>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    </section>
+    
+       
+    </div>
+ </div>
+</body>
+</html>

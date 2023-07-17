@@ -1,0 +1,87 @@
+body{
+    background: #f0f2f5;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+form {
+background: #fff;
+width: 501px;
+margin: auto;
+
+padding: 21px;
+border-radius: 6px;
+outline: none;
+
+}
+
+input#email {
+width: 100%;
+padding: 5px 0px;
+margin-bottom: 9px;
+border: none;
+border-bottom: 1px solid #ddd;
+outline: none;
+}
+.a{
+width: 100%;
+padding: 5px 0px;
+margin-bottom: 9px;
+border: none;
+border-bottom: 1px solid #ddd;
+outline: none;
+}
+
+input#password {
+width: 100%;
+padding: 5px 0px;
+margin-bottom: 9px;
+border: none;
+border-bottom: 1px solid #ddd;
+margin-bottom: 14px;
+outline: none;
+}
+
+input#login {
+width: 100%;
+padding: 5px 0px;
+margin-bottom: 9px;
+/* background: black; */
+margin-bottom: 17px;
+font-weight: bold;
+}
+h4 {
+text-align: center;
+padding: 8px 0px;
+}
+
+#mainSec {
+width: 700px;
+margin: auto;
+display: flex;
+background: #fff;
+padding: 36px 0px;
+margin-top: 14px;
+justify-content: space-between;
+border-radius: 10px;
+outline: none;
+box-shadow: 16px 4px 34px #ddd;
+}
+
+body {
+display: grid;
+}
+
+.leftImg {
+width: 400px;
+padding: 15px;
+}
+img.lfImg {
+    padding: 54px 0px;
+}
+
+img.lfImg {
+    width: 100%;
+}

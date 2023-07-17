@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>edit</title>
+</head>
+<body style=" background: floralwhite">
+
+<style>
+    form {
+    width: 700px;
+    margin: auto;
+    margin-top: 39px;
+    background: beige;
+    padding: 26px;
+    box-shadow: 2px 4px 4px #766d6d;
+    border-radius: 7px;
+    outline: none;
+}
+</style>
+
+  <div class="updateMain">
+    <h2 style="text-align:center">Update Form</h2>
+
+
+
+
+
+
+
+    <% if(user.length=1){%>
+    
+    <form method="post" action="/edit">
+        <div class="form-group">
+          <label >Name </label>
+          <input type="text" name="uname" value="<%= user.name %>" class="form-control"  placeholder="Enter Name">
+       
+        </div>
+        <div class="form-group">
+          <label >Email address</label>
+          <input type="email" disabled name="uemail" class="form-control" value="<%= user.email %>"  placeholder="Enter email">
+       
+        </div>
+        <div class="form-group">
+          <label > address</label>
+          <input type="text" name="uaddress" class="form-control" value="<%= user.address %>"  placeholder="Enter Address">
+          <input type="text" name="uId" class="form-control" value="<%= user.id %>"  hidden>
+        </div>
+        <div class="form-group">
+          <label >Password</label>
+          <input type="text" name="upassword" class="form-control" value="<%= user.password %>" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label >Create Date</label>
+          <input type="text"  disabled class="form-control" value="<%= user.createdOn %>" placeholder="Password">
+        </div>
+     
+        <button type="submit" class="btn btn-primary">Update Data</button>
+      </form>
+
+      <% }else{%>
+        <p style="color: red;text-align: center;padding:10px 0px">data not Found !</p>
+        <% } %>
+
+    
+  </div>
+
+
+
+    
+</body>
+</html>
