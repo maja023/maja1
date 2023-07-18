@@ -7,6 +7,13 @@ mongoose.set('strictQuery', true);
 const configF=require("./config/config");
 const express=require("express");
 const app=express();
+
+   app.use(express.logger());
+        app.use(express.static(__dirname + '/public'));
+        app.set('views', __dirname + '/views');
+       
+
+
 app.use(express.static("Views"));
 require('./config/db');
 const PORT=configF.app.PORT;
@@ -18,7 +25,7 @@ app.use(userRoutres);
 const studentRoutes=require("./Routes/studentRoutes");
 app.use(studentRoutes);
 app.set('view engine', 'ejs');
-app.use(express.static('views'))
+
 
 
 
